@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, AlertTriangle } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 interface BestPracticesProps {
   className?: string;
@@ -7,37 +7,35 @@ interface BestPracticesProps {
 
 export const BestPractices: React.FC<BestPracticesProps> = ({ className = '' }) => {
   const dosList = [
-    'Use lowercase letters, numbers, and hyphens',
-    'Start with a category (feature/, bugfix/, etc.)',
-    'Include ticket number when applicable',
+    'Use lowercase letters',
+    'Use hyphens as separators',
+    'Start with a category (e.g., feature)',
+    'Include ticket number if applicable',
     'Keep it concise but descriptive',
-    'Use hyphens to separate words',
   ];
 
   const dontsList = [
-    'Use spaces or underscores',
-    'Include special characters',
-    'Make it too long (max 50 chars)',
     'Use uppercase letters',
-    'Include sensitive information',
+    'Use spaces or underscores',
+    'Include unnecessary details',
+    'Make it too long',
+    'Use special characters',
   ];
 
   return (
-    <div className={`bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 ${className}`}>
-      <h2 className="text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-6">
-        Best Practices for Git Branch Names
-      </h2>
+    <div className={`bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-slate-200/50 dark:border-slate-700/50 ring-1 ring-slate-700/5 ${className}`}>
+      <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Best Practices for Git Branch Names</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <h3 className="flex items-center gap-2 text-emerald-400 font-medium mb-3">
+          <h3 className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-medium mb-3">
             <CheckCircle2 className="w-5 h-5" />
             Do's
           </h3>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             {dosList.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-slate-300">
-                <span className="mt-1.5 w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0"></span>
+              <li key={index} className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full" />
                 {item}
               </li>
             ))}
@@ -45,14 +43,14 @@ export const BestPractices: React.FC<BestPracticesProps> = ({ className = '' }) 
         </div>
 
         <div className="space-y-4">
-          <h3 className="flex items-center gap-2 text-amber-400 font-medium mb-3">
-            <AlertTriangle className="w-5 h-5" />
+          <h3 className="flex items-center gap-2 text-red-600 dark:text-red-400 font-medium mb-3">
+            <XCircle className="w-5 h-5" />
             Don'ts
           </h3>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             {dontsList.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-slate-300">
-                <span className="mt-1.5 w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
+              <li key={index} className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <span className="w-1.5 h-1.5 bg-red-500 dark:bg-red-400 rounded-full" />
                 {item}
               </li>
             ))}

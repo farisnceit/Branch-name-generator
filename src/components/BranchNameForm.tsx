@@ -60,14 +60,14 @@ export const BranchNameForm: React.FC<BranchNameFormProps> = ({ className = '' }
   };
 
   return (
-    <div className={`bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-slate-700/50 ring-1 ring-slate-700/5 ${className}`}>
+    <div className={`bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-slate-200/50 dark:border-slate-700/50 ring-1 ring-slate-700/5 ${className}`}>
       <div className="space-y-6">
         <div className="group">
-          <label className="block text-sm font-medium mb-2 text-slate-200">Branch Type</label>
+          <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-200">Branch Type</label>
           <select
             value={branchType}
             onChange={(e) => setBranchType(e.target.value as BranchType)}
-            className="w-full bg-slate-700/50 rounded-xl border-slate-600 text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200"
+            className="w-full bg-white/50 dark:bg-slate-700/50 rounded-xl border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200"
           >
             <option value="feature">Feature</option>
             <option value="bugfix">Bugfix</option>
@@ -79,47 +79,47 @@ export const BranchNameForm: React.FC<BranchNameFormProps> = ({ className = '' }
 
         {branchType === 'custom' && (
           <div className="animate-fadeIn">
-            <label className="block text-sm font-medium mb-2 text-slate-200">Custom Prefix</label>
+            <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-200">Custom Prefix</label>
             <input
               type="text"
               value={customPrefix}
               onChange={(e) => setCustomPrefix(e.target.value)}
               placeholder="Enter custom prefix"
-              className="w-full bg-slate-700/50 rounded-xl border-slate-600 text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400"
+              className="w-full bg-white/50 dark:bg-slate-700/50 rounded-xl border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-500"
             />
           </div>
         )}
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-slate-200">Ticket Number <span className="text-slate-400">(Optional)</span></label>
+          <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-200">Ticket Number <span className="text-slate-400 dark:text-slate-500">(Optional)</span></label>
           <input
             type="text"
             value={ticketNumber}
             onChange={(e) => setTicketNumber(e.target.value)}
             placeholder="e.g., JIRA-123"
-            className="w-full bg-slate-700/50 rounded-xl border-slate-600 text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400"
+            className="w-full bg-white/50 dark:bg-slate-700/50 rounded-xl border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-slate-200">Description</label>
+          <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-200">Description</label>
           <input
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Brief description of the branch"
-            className="w-full bg-slate-700/50 rounded-xl border-slate-600 text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400"
+            className="w-full bg-white/50 dark:bg-slate-700/50 rounded-xl border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white px-4 py-2.5 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-500"
           />
         </div>
 
         <div className="pt-4">
-          <label className="block text-sm font-medium mb-2 text-slate-200">Generated Branch Name:</label>
+          <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-200">Generated Branch Name:</label>
           <div className="flex gap-2">
             <input
               type="text"
               value={branchName}
               readOnly
-              className="w-full bg-slate-900/50 rounded-xl border-slate-600 text-emerald-400 px-4 py-2.5 font-mono"
+              className="w-full bg-slate-100/50 dark:bg-slate-900/50 rounded-xl border-slate-200 dark:border-slate-600 text-emerald-600 dark:text-emerald-400 px-4 py-2.5 font-mono"
             />
             <button
               onClick={copyToClipboard}
@@ -131,7 +131,7 @@ export const BranchNameForm: React.FC<BranchNameFormProps> = ({ className = '' }
             </button>
             <button
               onClick={resetForm}
-              className="px-4 py-2.5 bg-slate-600 text-white rounded-xl hover:bg-slate-700 transition-all duration-200 hover:shadow-lg hover:shadow-slate-500/20 active:scale-95"
+              className="px-4 py-2.5 bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-white rounded-xl hover:bg-slate-300 dark:hover:bg-slate-700 transition-all duration-200 hover:shadow-lg hover:shadow-slate-500/20 active:scale-95"
               title="Reset form"
             >
               <RefreshCw className="w-5 h-5" />
@@ -140,15 +140,15 @@ export const BranchNameForm: React.FC<BranchNameFormProps> = ({ className = '' }
         </div>
 
         {copied && (
-          <div className="text-sm text-emerald-400 mt-2 flex items-center gap-2 animate-fadeIn">
-            <span className="inline-block w-2 h-2 bg-emerald-400 rounded-full"></span>
+          <div className="text-sm text-emerald-600 dark:text-emerald-400 mt-2 flex items-center gap-2 animate-fadeIn">
+            <span className="inline-block w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
             Copied to clipboard!
           </div>
         )}
         
         {error && (
-          <div className="text-sm text-red-400 mt-2 flex items-center gap-2 animate-fadeIn">
-            <span className="inline-block w-2 h-2 bg-red-400 rounded-full"></span>
+          <div className="text-sm text-red-600 dark:text-red-400 mt-2 flex items-center gap-2 animate-fadeIn">
+            <span className="inline-block w-2 h-2 bg-red-500 dark:bg-red-400 rounded-full"></span>
             {error}
           </div>
         )}

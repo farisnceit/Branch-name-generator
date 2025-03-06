@@ -10,50 +10,43 @@ export const BranchTypes: React.FC<BranchTypesProps> = ({ className = '' }) => {
     {
       type: 'feature/*',
       description: 'For new features and enhancements',
-      example: 'feature/user-dashboard'
+      example: 'feature/user-authentication',
     },
     {
       type: 'bugfix/*',
-      description: 'For fixing non-critical bugs',
-      example: 'bugfix/form-validation'
+      description: 'For bug fixes',
+      example: 'bugfix/login-validation',
     },
     {
       type: 'hotfix/*',
-      description: 'For critical bug fixes in production',
-      example: 'hotfix/security-patch'
+      description: 'For urgent production fixes',
+      example: 'hotfix/security-patch',
     },
     {
       type: 'release/*',
       description: 'For release branches',
-      example: 'release/v1.2.0'
+      example: 'release/v1.2.0',
     },
     {
       type: 'custom/*',
       description: 'For custom branch types',
-      example: 'docs/update-readme'
-    }
+      example: 'docs/api-documentation',
+    },
   ];
 
   return (
-    <div className={`bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 ${className}`}>
-      <h2 className="text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-6">
-        Branch Types Guide
-      </h2>
+    <div className={`bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-slate-200/50 dark:border-slate-700/50 ring-1 ring-slate-700/5 ${className}`}>
+      <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">Branch Types Guide</h2>
       
-      <div className="grid gap-4">
+      <div className="space-y-4">
         {branchTypes.map((branch, index) => (
-          <div 
-            key={index}
-            className="p-4 bg-slate-700/30 rounded-lg border border-slate-600/30 hover:border-emerald-500/30 transition-colors"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <GitBranch className="w-5 h-5 text-emerald-400" />
-              <code className="text-emerald-400 font-mono">{branch.type}</code>
+          <div key={index} className="group">
+            <div className="flex items-center gap-2 mb-2">
+              <GitBranch className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+              <h3 className="font-mono text-emerald-600 dark:text-emerald-400">{branch.type}</h3>
             </div>
-            <p className="text-slate-300 text-sm mb-2">{branch.description}</p>
-            <div className="text-slate-400 text-sm font-mono">
-              Example: {branch.example}
-            </div>
+            <p className="text-slate-700 dark:text-slate-300 text-sm mb-1">{branch.description}</p>
+            <p className="font-mono text-xs text-slate-500 dark:text-slate-400">Example: {branch.example}</p>
           </div>
         ))}
       </div>
