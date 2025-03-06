@@ -1,43 +1,52 @@
-# 🌿 Branch Name Generator
+# NameYourBranch
 
-A sleek and intuitive tool that helps developers generate meaningful Git branch names following best practices.
+A modern Git branch name generator built with React, TypeScript, and Tailwind CSS. Generate clean and consistent branch names following Git best practices.
 
-## ✨ Features
+## Features
 
-- Generate conventional branch names (feature/, bugfix/, hotfix/, etc.)
-- Smart suggestions based on common patterns
-- Copy to clipboard functionality
-- Mobile-responsive design
-- Dark/Light mode support
+- 🎨 Modern UI with glass morphism effects
+- 🌓 Dark/Light mode with localStorage persistence
+- 🔄 Multiple branch types (feature, bugfix, hotfix, release, custom)
+- 📋 Copy to clipboard functionality
+- ✅ Input validation and sanitization
+- 📱 Responsive design
+- 🎯 SEO optimized
 
-## 🚀 Live Demo
-
-[Visit Branch Name Generator](https://branch-name-generator.vercel.app)
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - React + TypeScript
 - Tailwind CSS
 - Vite
-- Vercel (Hosting)
+- Vitest for testing
+- Lucide Icons
 
-## 💻 Local Development
+## Development
 
+1. Clone the repository:
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
+git clone https://github.com/farisnceit/Branch-name-generator.git
+cd Branch-name-generator
 ```
 
-## 📝 License
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Run tests:
+```bash
+npm test
+```
+
+## Contributing
+
+Feel free to open issues and pull requests. Please follow the existing code style and commit message conventions.
+
+## License
 
 MIT License
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!

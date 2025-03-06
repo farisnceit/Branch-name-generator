@@ -15,7 +15,7 @@ const App = () => {
             <GitBranch className="w-8 h-8 text-emerald-500 dark:text-emerald-400" />
           </div>
           <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 dark:from-emerald-400 dark:to-teal-400">
-            Branch Name Generator
+            NameYourBranch
           </h1>
         </div>
 
